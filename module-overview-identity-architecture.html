@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module Overview: Identity Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --svrn-bg: #1F1F1F;
+    --svrn-bg-elevated: #2A2A2A;
+    --svrn-bg-subtle: #353535;
+    --svrn-bg-inset: #171717;
+    --svrn-border: #3A3A3A;
+    --svrn-border-subtle: #2F2F2F;
+    --svrn-border-strong: #454545;
+    --svrn-fg: #ECE5CB;
+    --svrn-fg-white: rgba(255, 255, 255, 0.95);
+    --svrn-fg-muted: rgba(255, 255, 255, 0.75);
+    --svrn-fg-subtle: rgba(255, 255, 255, 0.55);
+    --svrn-fg-faint: rgba(255, 255, 255, 0.40);
+    --svrn-accent: #671F1F;
+    --svrn-accent-bright: #943838;
+    --svrn-accent-hover: #7A2828;
+    --svrn-accent-fill: rgba(103, 31, 31, 0.15);
+    --svrn-shadow-card: 0 4px 20px -4px rgba(0, 0, 0, 0.50), 0 1px 4px -1px rgba(0, 0, 0, 0.30);
+    --svrn-shadow-hover: 0 8px 32px -6px rgba(0, 0, 0, 0.60), 0 2px 6px -2px rgba(0, 0, 0, 0.35);
+    --svrn-display-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --svrn-radius-sm: 4px;
+    --svrn-radius-md: 6px;
+    --svrn-radius-lg: 8px;
+    --svrn-radius-xl: 12px;
+    --svrn-ease: 150ms ease;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--svrn-fg-white);
+    background: var(--svrn-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 96px 32px 128px;
+  }
+
+  /* ─────────── Hero (Centered Monolith) ─────────── */
+  .svrn-hero {
+    text-align: center;
+    padding: 64px 0 56px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--svrn-border);
+  }
+  .svrn-hero-kicker-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .svrn-hero-kicker-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--svrn-accent-bright);
+  }
+  .svrn-hero-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    color: var(--svrn-fg-subtle);
+    text-transform: uppercase;
+  }
+  .svrn-hero-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(52px, 7vw, 80px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--svrn-fg);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    margin-bottom: 28px;
+  }
+  .svrn-hero-lede {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--svrn-fg-muted);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .svrn-hero-quote {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(16px, 1.6vw, 19px);
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--svrn-fg-muted);
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 4px 0 4px 18px;
+    border-left: 2px solid var(--svrn-accent-bright);
+    text-align: left;
+  }
+
+  /* ─────────── Display headings ─────────── */
+  .svrn-h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--svrn-fg);
+    margin-top: 64px;
+    margin-bottom: 20px;
+  }
+  .svrn-h1:first-child { margin-top: 0; }
+
+  .svrn-h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 32px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--svrn-fg);
+    margin-top: 56px;
+    margin-bottom: 16px;
+  }
+
+  .svrn-display-shadow { text-shadow: var(--svrn-display-shadow); }
+
+  .svrn-h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--svrn-fg-white);
+    margin-top: 40px;
+    margin-bottom: 12px;
+  }
+
+  /* ─────────── Body ─────────── */
+  .svrn-p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--svrn-fg-white);
+    margin-bottom: 16px;
+  }
+  .svrn-p:last-child { margin-bottom: 0; }
+
+  a {
+    color: var(--svrn-accent-bright);
+    text-decoration-color: rgba(148, 56, 56, 0.4);
+    text-underline-offset: 3px;
+    transition: var(--svrn-ease);
+  }
+  a:hover { text-decoration-color: var(--svrn-accent-bright); }
+
+  strong { font-weight: 600; color: var(--svrn-fg); }
+  em { font-style: italic; }
+  s { opacity: 0.5; }
+
+  /* ─────────── Inline code ─────────── */
+  .svrn-inline-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88em;
+    background: var(--svrn-bg-subtle);
+    padding: 1px 6px;
+    border-radius: var(--svrn-radius-sm);
+    color: var(--svrn-fg);
+  }
+
+  /* ─────────── Lists ─────────── */
+  ul.svrn-ul, ol.svrn-ol {
+    margin-bottom: 16px;
+    padding-left: 0;
+    list-style: none;
+  }
+  ul.svrn-ul li, ol.svrn-ol li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    line-height: 1.7;
+  }
+  ul.svrn-ul li::before {
+    content: '•';
+    position: absolute;
+    left: 6px;
+    color: var(--svrn-accent-bright);
+    font-weight: 700;
+  }
+  ol.svrn-ol {
+    counter-reset: svrn-counter;
+  }
+  ol.svrn-ol li {
+    counter-increment: svrn-counter;
+  }
+  ol.svrn-ol li::before {
+    content: counter(svrn-counter) '.';
+    position: absolute;
+    left: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--svrn-accent-bright);
+    letter-spacing: 0;
+  }
+  ul.svrn-ul ul, ol.svrn-ol ol, ul.svrn-ul ol, ol.svrn-ol ul {
+    margin-top: 8px;
+    margin-bottom: 0;
+    margin-left: 8px;
+  }
+
+  /* ─────────── To-do ─────────── */
+  .svrn-todo {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    background: var(--svrn-bg-elevated);
+    border: 1px solid var(--svrn-border-subtle);
+    border-radius: var(--svrn-radius-md);
+  }
+  .svrn-todo input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: var(--svrn-accent-bright);
+    width: 14px;
+    height: 14px;
+  }
+  .svrn-todo-checked { opacity: 0.55; text-decoration: line-through; }
+
+  /* ─────────── Toggle ─────────── */
+  .svrn-toggle {
+    background: var(--svrn-bg-elevated);
+    border: 1px solid var(--svrn-border);
+    border-radius: var(--svrn-radius-lg);
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    transition: var(--svrn-ease);
+  }
+  .svrn-toggle summary {
+    font-weight: 500;
+    color: var(--svrn-fg-white);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .svrn-toggle summary::-webkit-details-marker { display: none; }
+  .svrn-toggle summary::before {
+    content: '▸';
+    color: var(--svrn-accent-bright);
+    font-size: 10px;
+    transition: transform var(--svrn-ease);
+  }
+  .svrn-toggle[open] summary::before { transform: rotate(90deg); }
+  .svrn-toggle-body { margin-top: 12px; }
+
+  /* ─────────── Quote ─────────── */
+  .svrn-quote {
+    border-left: 2px solid var(--svrn-accent-bright);
+    padding: 4px 0 4px 18px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--svrn-fg-muted);
+  }
+
+  /* ─────────── Callout ─────────── */
+  .svrn-callout {
+    background: var(--svrn-bg-elevated);
+    border: 1px solid var(--svrn-border);
+    border-radius: var(--svrn-radius-lg);
+    padding: 18px 20px;
+    margin: 20px 0;
+    box-shadow: var(--svrn-shadow-card);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .svrn-callout-icon {
+    flex-shrink: 0;
+    color: var(--svrn-accent-bright);
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .svrn-callout-body { flex: 1; }
+
+  /* ─────────── Code block ─────────── */
+  .svrn-code-block {
+    background: var(--svrn-bg-inset);
+    border: 1px solid var(--svrn-border-subtle);
+    border-radius: var(--svrn-radius-md);
+    padding: 16px 18px;
+    margin: 20px 0;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--svrn-fg-white);
+  }
+
+  /* ─────────── Divider ─────────── */
+  .svrn-divider {
+    border: none;
+    border-top: 1px solid var(--svrn-border);
+    margin: 40px 0;
+  }
+
+  /* ─────────── Image ─────────── */
+  figure.svrn-figure {
+    margin: 28px 0;
+  }
+  figure.svrn-figure img, figure.svrn-figure video {
+    width: 100%;
+    border-radius: var(--svrn-radius-md);
+    box-shadow: var(--svrn-shadow-card);
+    display: block;
+  }
+  figure.svrn-figure figcaption {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--svrn-fg-subtle);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  /* ─────────── Bookmark ─────────── */
+  .svrn-bookmark {
+    display: block;
+    background: var(--svrn-bg-elevated);
+    border: 1px solid var(--svrn-border);
+    border-radius: var(--svrn-radius-lg);
+    padding: 14px 18px;
+    margin: 16px 0;
+    text-decoration: none;
+    color: var(--svrn-fg-white);
+    transition: var(--svrn-ease);
+  }
+  .svrn-bookmark:hover {
+    border-color: var(--svrn-border-strong);
+    box-shadow: var(--svrn-shadow-card);
+  }
+  .svrn-bookmark-title { font-weight: 500; margin-bottom: 4px; }
+  .svrn-bookmark-url { font-size: 12px; color: var(--svrn-fg-subtle); font-family: 'JetBrains Mono', monospace; }
+
+  /* ─────────── Table ─────────── */
+  table.svrn-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  table.svrn-table th, table.svrn-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--svrn-border-subtle);
+  }
+  table.svrn-table th {
+    font-weight: 500;
+    color: var(--svrn-fg-muted);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ─────────── Columns ─────────── */
+  .svrn-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 20px 0;
+  }
+  @media (max-width: 640px) {
+    .svrn-cols { grid-template-columns: 1fr; }
+  }
+
+  /* ─────────── Diagram: Flow (module / lesson map) ─────────── */
+  /* Chrome-less: no panel, no header, no framing — just cards floating on the
+     page bg with SVG connectors. Breaks out of main's 760px column to read as
+     a featured element. Coordinate space: viewBox 960 x 540. */
+
+  .svrn-flow-diagram {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1100px, calc(100vw - 32px));
+    aspect-ratio: 960 / 332;
+    margin: 24px 0;
+  }
+
+  .svrn-flow-node {
+    position: absolute;
+    width: 20.83%;
+    height: 39.16%;
+    padding: 18px 20px;
+    background: linear-gradient(180deg, var(--svrn-bg) 0%, var(--svrn-bg-inset) 100%);
+    border: 1px solid var(--svrn-border);
+    border-radius: var(--svrn-radius-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 180ms ease,
+                box-shadow 180ms ease;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 2px 10px rgba(0, 0, 0, 0.35);
+    z-index: 1;
+  }
+  .svrn-flow-node::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 2px;
+    background: var(--svrn-accent);
+    opacity: 0.55;
+    border-radius: var(--svrn-radius-sm) var(--svrn-radius-sm) 0 0;
+    transition: opacity 180ms ease, background 180ms ease;
+  }
+  .svrn-flow-node:hover {
+    transform: translateY(-3px);
+    border-color: var(--svrn-accent-bright);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 10px 24px rgba(0, 0, 0, 0.50),
+      0 0 0 1px var(--svrn-accent-bright);
+  }
+  .svrn-flow-node:hover::before {
+    opacity: 1;
+    background: var(--svrn-accent-bright);
+  }
+
+  .svrn-flow-node-index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--svrn-fg-faint);
+  }
+  .svrn-flow-node-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    color: var(--svrn-fg);
+    text-shadow: var(--svrn-display-shadow);
+  }
+
+  .svrn-flow-node[data-pos="r1c1"] { left: 3.33%;  top: 6.02%; }
+  .svrn-flow-node[data-pos="r1c2"] { left: 27.5%;  top: 6.02%; }
+  .svrn-flow-node[data-pos="r1c3"] { left: 51.67%; top: 6.02%; }
+  .svrn-flow-node[data-pos="r1c4"] { left: 75.83%; top: 6.02%; }
+  .svrn-flow-node[data-pos="r2c1"] { left: 3.33%;  top: 54.82%; }
+  .svrn-flow-node[data-pos="r2c2"] { left: 27.5%;  top: 54.82%; }
+  .svrn-flow-node[data-pos="r2c3"] { left: 51.67%; top: 54.82%; }
+  .svrn-flow-node[data-pos="r2c4"] { left: 75.83%; top: 54.82%; }
+
+  .svrn-flow-arrows {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 0;
+  }
+
+  /* ─────────── Unmapped fallback ─────────── */
+  .svrn-unmapped {
+    padding: 12px;
+    background: var(--svrn-bg-subtle);
+    border: 1px dashed var(--svrn-border-strong);
+    border-radius: var(--svrn-radius-md);
+    color: var(--svrn-fg-subtle);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    margin: 12px 0;
+  }
+
+  /* ─────────── Animation layer ─────────── */
+
+  /* Hero reveal via keyframe — one-shot staggered fade+rise on load */
+  @keyframes svrnHeroReveal {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  html.js-ready .svrn-hero [data-svrn-hero] {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  html.js-ready .svrn-hero [data-svrn-hero].in-view {
+    animation: svrnHeroReveal 590ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* Page-wide section scale — triggered by cursor-Y tracker (not :hover),
+     so any horizontal position at the right vertical band lights up the section */
+  .svrn-hero,
+  .svrn-section {
+    transition: transform 75ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
+  }
+  .svrn-hero.svrn-section-active,
+  .svrn-section.svrn-section-active {
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+  <main>
+    <section class="svrn-hero">
+  <div class="svrn-hero-kicker-wrap">
+    <span class="svrn-hero-kicker-dot"></span>
+    <span class="svrn-hero-kicker">Identity Architecture</span>
+    <span class="svrn-hero-kicker-dot"></span>
+  </div>
+  <h1 class="svrn-hero-title">Module Overview: Identity Architecture</h1>
+  <blockquote class="svrn-hero-quote">Before You Can Build Anything Worth Building, You Have To Rebuild The Man Holding The Blueprints</blockquote>
+</section>
+    <figure class="svrn-flow-diagram" aria-label="Identity Architecture module map"><svg class="svrn-flow-arrows" viewBox="0 0 960 332" aria-hidden="true"><defs><marker id="svrn-flow-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#943838"/></marker></defs><g stroke="#943838" stroke-width="1.25" stroke-linecap="round" fill="none" marker-end="url(#svrn-flow-arrowhead)" opacity="0.85"><line x1="232" y1="85" x2="261" y2="85"/><line x1="464" y1="85" x2="493" y2="85"/><line x1="696" y1="85" x2="725" y2="85"/><line x1="828" y1="150" x2="828" y2="179"/><line x1="728" y1="247" x2="699" y2="247"/><line x1="496" y1="247" x2="467" y2="247"/><line x1="264" y1="247" x2="235" y2="247"/></g></svg><div class="svrn-flow-node" data-pos="r1c1"><span class="svrn-flow-node-index">Lesson / 01</span><span class="svrn-flow-node-title">Identity As A Concept &amp; Tool</span></div><div class="svrn-flow-node" data-pos="r1c2"><span class="svrn-flow-node-index">Lesson / 02</span><span class="svrn-flow-node-title">The Internal Audit</span></div><div class="svrn-flow-node" data-pos="r1c3"><span class="svrn-flow-node-index">Lesson / 03</span><span class="svrn-flow-node-title">Current Conditioning Map</span></div><div class="svrn-flow-node" data-pos="r1c4"><span class="svrn-flow-node-index">Lesson / 04</span><span class="svrn-flow-node-title">Chaos Mapping</span></div><div class="svrn-flow-node" data-pos="r2c4"><span class="svrn-flow-node-index">Lesson / 05</span><span class="svrn-flow-node-title">Deconditioning &amp; Reprogramming</span></div><div class="svrn-flow-node" data-pos="r2c3"><span class="svrn-flow-node-index">Lesson / 06</span><span class="svrn-flow-node-title">The Sovereign Contract</span></div><div class="svrn-flow-node" data-pos="r2c2"><span class="svrn-flow-node-index">Lesson / 07</span><span class="svrn-flow-node-title">Self Auditing &amp; Feedback Loops</span></div><div class="svrn-flow-node" data-pos="r2c1"><span class="svrn-flow-node-index">Lesson / 08</span><span class="svrn-flow-node-title">Recalibration Protocol</span></div></figure>
+    <hr class="svrn-divider">
+    <h2 class="svrn-h2 svrn-display-shadow"><em>Welcome To Identity Architecture</em></h2>
+    <p class="svrn-p">This is where the real work begins.</p>
+    <p class="svrn-p">Everything in your life, your business, your relationships, your health, your wealth, is downstream of one thing. Who you believe you are.</p>
+    <p class="svrn-p">Not who you say you are. Not who you perform as. Who you actually are when nobody is watching and the pressure is on.</p>
+    <p class="svrn-p">Most founders never examine this. They stack strategies on top of a broken foundation and wonder why nothing holds. They chase tactics, systems, and frameworks while the operating system running underneath all of it was installed by accident.</p>
+    <p class="svrn-p">This module changes that.</p>
+    <p class="svrn-p">Identity Architecture is the process of dismantling the identity you inherited and deliberately building the one you need. Not through affirmations. Not through journaling prompts. Through confrontation, evidence, and engineering.</p>
+    <p class="svrn-p">You are going to look honestly at who you are. You are going to trace where that version of you came from. You are going to calculate what it is costing you. And then you are going to replace it, piece by piece, with an identity you designed on purpose.</p>
+    <p class="svrn-p">This is not comfortable work. It is necessary work.</p>
+    <hr class="svrn-divider">
+    <h2 class="svrn-h2 svrn-display-shadow"><em>The Journey Through This Module</em></h2>
+    <p class="svrn-p">Here is what you will move through, lesson by lesson.</p>
+    <p class="svrn-p"><strong>Lesson 1: Identity As A Concept and Tool</strong></p>
+    <p class="svrn-p">You will learn what identity actually is, not the motivational poster version, the mechanical version. The four layers of identity, why only one of them matters, and why your current identity is a program that was installed without your permission. This lesson gives you the lens for everything that follows.</p>
+    <p class="svrn-p"><strong>Lesson 2: The Internal Audit</strong></p>
+    <p class="svrn-p">You will confront the evidence. A scored assessment across the five domains that matter most: body, time, money, word, and relationships. No narratives. No spin. Just data on who you actually are right now. This becomes your baseline, and you will retake it monthly to track your transformation.</p>
+    <p class="svrn-p"><strong>Lesson 3: Current Conditioning Map</strong></p>
+    <p class="svrn-p">You will trace your identity back to its sources. The five forces that built the version of you operating today: family, environment, trauma, social reinforcement, and pivotal experiences. You cannot dismantle what you do not understand. This lesson gives you the blueprint of your current programming.</p>
+    <p class="svrn-p"><strong>Lesson 4: Chaos Mapping</strong></p>
+    <p class="svrn-p">You will map the patterns that are actively destroying your progress. The triggers, the emotional reactions, the conditioned responses, and the chaos they produce. You will identify your top three to five chaos loops and pinpoint exactly where you can intercept them before they spiral.</p>
+    <p class="svrn-p"><strong>Lesson 5: Deconditioning and Reprogramming</strong></p>
+    <p class="svrn-p">You will learn the science and strategy of breaking old patterns and installing new ones. Three pattern layers: cognitive, emotional, and behavioral. How to restructure the thoughts, process the emotions, and interrupt the behaviors that keep pulling you back to the old version of yourself.</p>
+    <p class="svrn-p"><strong>Lesson 6: The Sovereign Contract</strong></p>
+    <p class="svrn-p">You will formalize your new identity into a governing document. Four clauses: Identity, Standards, Enforcement, and Review. This is not a vision board. It is a contract with yourself, written with precision, enforced with discipline, and reviewed with honesty.</p>
+    <p class="svrn-p"><strong>Lesson 7: Self Auditing and Feedback Loops</strong></p>
+    <p class="svrn-p">You will build the measurement system that keeps your identity honest over time. Three feedback channels: self, system, and external. Daily debriefs, weekly reviews, and an identity evidence file that tracks whether your behavior matches your contract.</p>
+    <p class="svrn-p"><strong>Lesson 8: Recalibration Protocol</strong></p>
+    <p class="svrn-p">You will learn the system for catching drift before it becomes collapse. Four drift patterns, three drift levels with escalating responses, and the recalibration mindset that turns setbacks into data instead of failures.</p>
+    <hr class="svrn-divider">
+    <h2 class="svrn-h2 svrn-display-shadow"><em>What This Module Demands From You</em></h2>
+    <p class="svrn-p">This is not passive education.</p>
+    <p class="svrn-p">Every lesson has a purpose and every purpose requires action. You will audit yourself. You will write. You will map your patterns. You will build frameworks you actually use.</p>
+    <p class="svrn-p">The man who skims this module and moves on will get nothing from it.</p>
+    <p class="svrn-p">The man who does the work will walk out of it with something most people never build: a deliberate identity, engineered on purpose, backed by evidence, and enforced by standards he wrote himself.</p>
+    <p class="svrn-p">That is the foundation everything else in this program is built on.</p>
+    <p class="svrn-p">Let&#x27;s get into it.</p>
+    <hr class="svrn-divider">
+  </main>
+<script>
+(function() {
+  document.documentElement.classList.add('js-ready');
+
+  // Group body content into sections (between dividers) for unified scale target
+  const main = document.querySelector('main');
+  if (main) {
+    const original = Array.from(main.childNodes);
+    let currentSection = null;
+    for (const node of original) {
+      if (node.nodeType !== 1) continue;
+      if (node.matches('.svrn-hero, .svrn-divider')) {
+        currentSection = null;
+        continue;
+      }
+      if (!currentSection) {
+        currentSection = document.createElement('div');
+        currentSection.className = 'svrn-section';
+        main.insertBefore(currentSection, node);
+      }
+      currentSection.appendChild(node);
+    }
+  }
+
+  // Hero reveal: staggered keyframe animation on load
+  const heroEls = document.querySelectorAll(
+    '.svrn-hero-kicker-wrap, .svrn-hero-title, .svrn-hero-quote, .svrn-hero-lede'
+  );
+  heroEls.forEach((el, i) => {
+    el.setAttribute('data-svrn-hero', '');
+    el.style.animationDelay = (125 + i * 50) + 'ms';
+  });
+  requestAnimationFrame(() => {
+    heroEls.forEach(el => el.classList.add('in-view'));
+  });
+
+  // Page-wide section activation: cursor Y position (or scroll) picks the active section
+  let currentActive = null;
+  let pendingFrame = null;
+  let lastY = -1;
+
+  function updateActive() {
+    pendingFrame = null;
+    if (lastY < 0) return;
+    const sections = document.querySelectorAll('.svrn-hero, .svrn-section');
+    let next = null;
+    for (const s of sections) {
+      const r = s.getBoundingClientRect();
+      if (lastY >= r.top && lastY <= r.bottom) { next = s; break; }
+    }
+    if (next !== currentActive) {
+      if (currentActive) currentActive.classList.remove('svrn-section-active');
+      if (next) next.classList.add('svrn-section-active');
+      currentActive = next;
+    }
+  }
+
+  document.addEventListener('mousemove', (e) => {
+    lastY = e.clientY;
+    if (!pendingFrame) pendingFrame = requestAnimationFrame(updateActive);
+  });
+
+  window.addEventListener('scroll', () => {
+    if (lastY < 0) lastY = window.innerHeight / 2;
+    if (!pendingFrame) pendingFrame = requestAnimationFrame(updateActive);
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => {
+    if (currentActive) { currentActive.classList.remove('svrn-section-active'); currentActive = null; }
+    lastY = -1;
+  });
+})();
+</script>
+</body>
+</html>
