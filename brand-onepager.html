@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVRN — Brand One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1F1F1F;
+    --bg-elevated: #2A2A2A;
+    --bg-subtle: #353535;
+    --bg-inset: #171717;
+
+    --border: #3A3A3A;
+    --border-subtle: #2F2F2F;
+    --border-strong: #454545;
+
+    --fg: #ECE5CB;
+    --fg-white: rgba(255, 255, 255, 0.95);
+    --fg-muted: rgba(255, 255, 255, 0.75);
+    --fg-subtle: rgba(255, 255, 255, 0.55);
+    --fg-faint: rgba(255, 255, 255, 0.40);
+    --fg-quiet: rgba(255, 255, 255, 0.25);
+
+    --accent: #671F1F;
+    --accent-bright: #943838;
+    --accent-hover: #7A2828;
+
+    --shadow-card: 0 4px 20px -4px rgba(0, 0, 0, 0.50), 0 1px 4px -1px rgba(0, 0, 0, 0.30);
+    --shadow-hover: 0 8px 32px -6px rgba(0, 0, 0, 0.60), 0 2px 6px -2px rgba(0, 0, 0, 0.35);
+
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+
+    --ease: 150ms ease;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--fg-white);
+    background: var(--bg);
+    background-image: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(148, 56, 56, 0.09) 0%, transparent 60%);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 40px 140px;
+  }
+
+  /* ——— Masthead ——— */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 16px;
+  }
+
+  .masthead-logo {
+    height: 18px;
+    display: block;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-subtle);
+  }
+
+  .cream-divider {
+    height: 1px;
+    background: var(--fg);
+    margin-bottom: 72px;
+  }
+
+  /* ——— Hero ——— */
+  .hero {
+    padding: 56px 0 80px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--fg-white);
+    margin-bottom: 28px;
+  }
+
+  .hero-logo {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .hero-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--fg-white);
+    max-width: 540px;
+  }
+
+  /* ——— Sections ——— */
+  section { margin-bottom: 96px; }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4vw, 44px);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    color: var(--fg);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--fg-faint);
+    text-transform: uppercase;
+  }
+
+  .section-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--fg-white);
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+
+  /* ——— Wordmark showcase ——— */
+  .wordmark-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .wordmark-card {
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: box-shadow var(--ease);
+    padding: 40px;
+  }
+
+  .wordmark-card:hover { box-shadow: var(--shadow-hover); }
+
+  .wordmark-card.primary { grid-column: span 2; height: 260px; }
+
+  .wordmark-card.on-dark { background: var(--bg-elevated); }
+  .wordmark-card.on-maroon { background: var(--accent); border-color: var(--accent-bright); }
+  .wordmark-card.on-cream { background: var(--fg); border-color: #D9D0B3; }
+
+  .wordmark-card img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+
+  .wordmark-card.on-cream img { filter: brightness(0) saturate(1) invert(0.09); }
+
+  .wordmark-card.primary img { max-height: 64px; }
+  .wordmark-card img.symbol { max-height: 120px; }
+
+  .wordmark-card .caption {
+    position: absolute;
+    bottom: 14px; left: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-subtle);
+  }
+
+  .wordmark-card.on-cream .caption { color: rgba(31, 31, 31, 0.55); }
+
+  .asset-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--fg-faint);
+    margin-bottom: 12px;
+    padding-left: 2px;
+  }
+
+  .asset-note strong { color: var(--fg-white); font-weight: 500; }
+
+  /* ——— Color palette ——— */
+  .palette-group { margin-bottom: 32px; }
+
+  .palette-group-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    margin-bottom: 16px;
+    padding-left: 2px;
+  }
+
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .swatch {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: background-color var(--ease), border-color var(--ease), box-shadow var(--ease);
+  }
+
+  .swatch:hover {
+    background: var(--bg-subtle);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .swatch-fill {
+    height: 112px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .swatch-body { padding: 20px 24px 24px; }
+
+  .swatch-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg);
+    margin-bottom: 6px;
+  }
+
+  .swatch-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--fg-subtle);
+    margin-bottom: 14px;
+  }
+
+  .swatch-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--fg-faint);
+    line-height: 1.55;
+  }
+
+  /* ——— Typography ——— */
+  .type-stack { display: grid; gap: 16px; }
+
+  .type-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 48px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--ease);
+  }
+
+  .type-card:hover { box-shadow: var(--shadow-hover); }
+
+  .type-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+  }
+
+  .type-meta span strong { color: var(--fg); font-weight: 600; display: block; margin-top: 4px; font-size: 11px; }
+
+  .specimen-display {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 80px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    color: var(--fg);
+    margin-bottom: 24px;
+  }
+
+  .specimen-display-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+    margin-bottom: 8px;
+  }
+
+  .specimen-body-xl {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--fg-white);
+    max-width: 620px;
+    margin-bottom: 12px;
+  }
+
+  .specimen-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--fg-white);
+    max-width: 620px;
+    margin-bottom: 10px;
+  }
+
+  .specimen-body-sm {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--fg-muted);
+    max-width: 620px;
+  }
+
+  .specimen-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    color: var(--fg-muted);
+    margin-bottom: 8px;
+  }
+
+  .specimen-mono-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+  }
+
+  .rule-block {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .rule {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--fg-white);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .rule::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 8px; height: 1px;
+    background: var(--accent-bright);
+  }
+
+  .rule strong { color: var(--fg); font-weight: 600; }
+
+  /* ——— Page header pattern ——— */
+  .pattern-demo {
+    background: var(--bg-inset);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 48px;
+  }
+
+  .pattern-kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--fg-white);
+    margin-bottom: 12px;
+  }
+
+  .pattern-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--fg);
+    margin-bottom: 16px;
+  }
+
+  .pattern-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--fg-white);
+    max-width: 440px;
+  }
+
+  /* ——— Tokens ——— */
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .token {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--ease);
+  }
+
+  .token:hover { box-shadow: var(--shadow-hover); }
+
+  .token-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    margin-bottom: 10px;
+  }
+
+  .token-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--fg);
+    margin-bottom: 14px;
+  }
+
+  .radius-demo {
+    height: 56px;
+    background: var(--accent);
+    border: 1px solid var(--accent-bright);
+  }
+
+  .shadow-demo {
+    height: 56px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  /* ——— Components ——— */
+  .component-block {
+    background: var(--bg-inset);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    margin-bottom: 16px;
+  }
+
+  .component-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .demo-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 28px 32px;
+    box-shadow: var(--shadow-card);
+    transition: background-color var(--ease), border-color var(--ease), box-shadow var(--ease);
+    max-width: 480px;
+  }
+
+  .demo-card:hover {
+    background: #303030;
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .demo-card h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    color: var(--fg);
+    margin-bottom: 8px;
+  }
+
+  .demo-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--fg-white);
+    line-height: 1.6;
+  }
+
+  .demo-card .kpi {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 14px;
+  }
+
+  /* Buttons */
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: var(--fg);
+    border: 1px solid var(--accent-bright);
+    border-radius: var(--radius-lg);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color var(--ease), border-color var(--ease), box-shadow var(--ease);
+  }
+
+  .btn:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 4px 16px -4px rgba(148, 56, 56, 0.40);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--fg);
+    border: 1px solid var(--border-strong);
+  }
+
+  .btn-ghost:hover {
+    background: var(--bg-subtle);
+    border-color: var(--fg-faint);
+    box-shadow: none;
+  }
+
+  .btn-text {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--fg-muted);
+    padding: 12px 16px;
+  }
+
+  .btn-text:hover {
+    color: var(--fg);
+    background: var(--bg-subtle);
+    box-shadow: none;
+  }
+
+  /* Label chips */
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    background: var(--bg-subtle);
+    color: var(--fg-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+
+  .tag-chip.accent {
+    background: rgba(148, 56, 56, 0.12);
+    color: var(--accent-bright);
+    border-color: rgba(148, 56, 56, 0.30);
+  }
+
+  .tag-chip.cream {
+    background: rgba(236, 229, 203, 0.08);
+    color: var(--fg);
+    border-color: rgba(236, 229, 203, 0.20);
+  }
+
+  /* Voice */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .voice-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--ease);
+  }
+
+  .voice-card:hover { box-shadow: var(--shadow-hover); }
+
+  .voice-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent-bright);
+    margin-bottom: 16px;
+  }
+
+  .voice-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: -0.015em;
+    color: var(--fg);
+    margin-bottom: 12px;
+  }
+
+  .voice-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--fg-white);
+  }
+
+  /* Do / Don't */
+  .dodont-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .dodont {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 32px 36px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .dodont-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dodont.do .dodont-head { color: var(--fg); }
+  .dodont.dont .dodont-head { color: var(--accent-bright); }
+
+  .dodont ul {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+  }
+
+  .dodont li {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--fg-white);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .dodont li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 10px; height: 1px;
+  }
+
+  .dodont.do li::before { background: var(--fg); }
+  .dodont.dont li::before { background: var(--accent-bright); }
+
+  /* Callout */
+  .callout {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent-bright);
+    border-radius: var(--radius-lg);
+    padding: 20px 28px;
+    margin: 32px 0 0;
+  }
+
+  .callout-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 8px;
+  }
+
+  .callout-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--fg-white);
+    line-height: 1.6;
+  }
+
+  .callout-body code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--fg);
+    background: var(--bg-inset);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+  }
+
+  @media (max-width: 900px) {
+    .color-grid, .token-grid, .voice-grid { grid-template-columns: 1fr 1fr; }
+    .wordmark-grid { grid-template-columns: 1fr; }
+    .wordmark-card.primary { grid-column: span 1; }
+    .dodont-grid { grid-template-columns: 1fr; }
+    .container { padding: 32px 20px 80px; }
+  }
+
+  @media (max-width: 560px) {
+    .color-grid, .token-grid, .voice-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <img src="logomark-cream.svg" alt="SVRN" class="masthead-logo">
+    <div class="tag">Brand One-Pager · v0.2 · 2026-04-17</div>
+  </div>
+  <div class="cream-divider"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-kicker">The brand system for Sovereign Operators.</div>
+    <img src="logomark-cream.svg" alt="SVRN" class="hero-logo">
+    <p class="hero-lead">A single source of truth for the visual language of SVRN. Every HTML lesson, funnel, presentation, and site pulls stylistic direction from this document — colors, type, components, voice.</p>
+  </section>
+
+  <!-- 01 Wordmark -->
+  <section>
+    <div class="section-head">
+      <div class="section-title">Wordmark.</div>
+      <div class="section-index">01 · Identity</div>
+    </div>
+    <p class="section-lead">Two marks from the original designer, both in cream. The logomark is the primary — horizontal wordmark for mastheads, hero blocks, and signature placements. The symbol stands alone as a favicon, badge, or collapsed-nav glyph.</p>
+
+    <div class="asset-note"><strong>Primary Logomark</strong> · logomark-cream.svg · 793 × 150</div>
+    <div class="wordmark-grid">
+      <div class="wordmark-card on-dark primary">
+        <img src="logomark-cream.svg" alt="SVRN">
+        <div class="caption">On charcoal · #1F1F1F</div>
+      </div>
+      <div class="wordmark-card on-maroon">
+        <img src="logomark-cream.svg" alt="SVRN">
+        <div class="caption">On maroon</div>
+      </div>
+    </div>
+    <div class="wordmark-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="wordmark-card on-cream">
+        <img src="logomark-cream.svg" alt="SVRN">
+        <div class="caption">On cream · inverted</div>
+      </div>
+      <div class="wordmark-card on-dark" style="background: var(--bg-inset);">
+        <img src="logomark-cream.svg" alt="SVRN">
+        <div class="caption">On inset · #171717</div>
+      </div>
+    </div>
+
+    <div class="asset-note" style="margin-top: 40px;"><strong>Symbol Mark</strong> · symbol-cream.svg · 303 × 186</div>
+    <div class="wordmark-grid">
+      <div class="wordmark-card on-dark">
+        <img src="symbol-cream.svg" alt="SVRN symbol" class="symbol">
+        <div class="caption">On charcoal</div>
+      </div>
+      <div class="wordmark-card on-maroon">
+        <img src="symbol-cream.svg" alt="SVRN symbol" class="symbol">
+        <div class="caption">On maroon</div>
+      </div>
+      <div class="wordmark-card on-cream">
+        <img src="symbol-cream.svg" alt="SVRN symbol" class="symbol">
+        <div class="caption">On cream · inverted</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Usage</div>
+      <div class="callout-body">Clear space around the mark equals the cap-height of the letterform. Never stretch, recolor, outline, or apply drop-shadows. On cream surfaces, use a CSS filter or a true-black variant rather than leaving the cream-on-cream version visible.</div>
+    </div>
+  </section>
+
+  <!-- 02 Color -->
+  <section>
+    <div class="section-head">
+      <div class="section-title">Color.</div>
+      <div class="section-index">02 · Palette</div>
+    </div>
+    <p class="section-lead">Dark charcoal base with layered elevation, cream foreground for warmth, maroon for signal. Greys are built from white at graded opacity — they stay tonally consistent across surfaces without needing named shades.</p>
+
+    <div class="palette-group">
+      <div class="palette-group-label">Surfaces</div>
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #1F1F1F;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Charcoal Base</div>
+            <div class="swatch-hex">#1F1F1F · --bg</div>
+            <div class="swatch-note">Page background. The foundation the whole system sits on.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #2A2A2A;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Elevated</div>
+            <div class="swatch-hex">#2A2A2A · --bg-elevated</div>
+            <div class="swatch-note">Cards, panels, elevated surfaces. Primary container fill.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #353535;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Subtle</div>
+            <div class="swatch-hex">#353535 · --bg-subtle</div>
+            <div class="swatch-note">Hover states, sub-sections inside cards.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #171717;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Inset</div>
+            <div class="swatch-hex">#171717 · --bg-inset</div>
+            <div class="swatch-note">Input fields, inset wells, darker recesses.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #3A3A3A;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Border Default</div>
+            <div class="swatch-hex">#3A3A3A · --border</div>
+            <div class="swatch-note">Default 1px border on cards and panels.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #454545;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Border Strong</div>
+            <div class="swatch-hex">#454545 · --border-strong</div>
+            <div class="swatch-note">Interactive hover border, stronger separation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <div class="palette-group-label">Foreground · Cream &amp; Greys</div>
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #ECE5CB;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Cream</div>
+            <div class="swatch-hex">#ECE5CB · --fg</div>
+            <div class="swatch-note">Primary text, headings, brand foreground. The warmth of the system.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: rgba(255,255,255,0.95);"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Primary White</div>
+            <div class="swatch-hex">rgba(255,255,255, 0.95)</div>
+            <div class="swatch-note">Body text and active UI. Default reading color on dark surfaces.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: rgba(255,255,255,0.75);"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Muted</div>
+            <div class="swatch-hex">rgba(255,255,255, 0.75)</div>
+            <div class="swatch-note">Secondary paragraph text, supporting copy.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: rgba(255,255,255,0.55);"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Subtle</div>
+            <div class="swatch-hex">rgba(255,255,255, 0.55)</div>
+            <div class="swatch-note">Captions, metadata, helper text.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: rgba(255,255,255,0.40);"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Faint</div>
+            <div class="swatch-hex">rgba(255,255,255, 0.40)</div>
+            <div class="swatch-note">Mono labels, timestamps, section indices.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: rgba(255,255,255,0.25);"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Quiet</div>
+            <div class="swatch-hex">rgba(255,255,255, 0.25)</div>
+            <div class="swatch-note">Dividers, disabled states, barely-there markers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <div class="palette-group-label">Accent · Maroon</div>
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #671F1F;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Maroon</div>
+            <div class="swatch-hex">#671F1F · --accent</div>
+            <div class="swatch-note">Primary accent. Signal color for CTAs and emphasis.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #943838;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Maroon Bright</div>
+            <div class="swatch-hex">#943838 · --accent-bright</div>
+            <div class="swatch-note">Hover highlight, labels, active indicators, section markers.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: #7A2828;"></div>
+          <div class="swatch-body">
+            <div class="swatch-name">Maroon Hover</div>
+            <div class="swatch-hex">#7A2828 · --accent-hover</div>
+            <div class="swatch-note">Button hover state. Between base maroon and bright.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Typography -->
+  <section>
+    <div class="section-head">
+      <div class="section-title">Typography.</div>
+      <div class="section-index">03 · Type System</div>
+    </div>
+    <p class="section-lead">Three families, three jobs. Fraunces for display. Inter for everything people actually read. JetBrains Mono for labels, coordinates, and numbers. No italic serif in body copy — that's a crutch we don't use.</p>
+
+    <div class="type-stack">
+      <!-- Display · Fraunces -->
+      <div class="type-card">
+        <div class="type-meta">
+          <span>Role<strong>Display</strong></span>
+          <span>Family<strong>Fraunces</strong></span>
+          <span>Weights<strong>400 · 500</strong></span>
+          <span>Use For<strong>Page Titles, Section Titles, Hero</strong></span>
+        </div>
+        <div class="specimen-display">Rebuild the man holding the blueprints.</div>
+        <div class="specimen-display-sub">Section scale — 32px · weight 400 · tight tracking.</div>
+        <div class="rule-block">
+          <div class="rule"><strong>Weight:</strong> 400 is the default. Drop to 300 only for oversized display copy.</div>
+          <div class="rule"><strong>Tracking:</strong> -0.025em at section scale, -0.035em at hero scale.</div>
+          <div class="rule"><strong>Terminal period:</strong> page and section titles end with a period — a stylistic signature borrowed from the dashboard ("Internal Audit.").</div>
+          <div class="rule"><strong>Never:</strong> italic Fraunces inline for editorial emphasis. That's a Jack/Newsreader pattern — not ours.</div>
+        </div>
+      </div>
+
+      <!-- Body · Inter -->
+      <div class="type-card">
+        <div class="type-meta">
+          <span>Role<strong>Body &amp; UI</strong></span>
+          <span>Family<strong>Inter</strong></span>
+          <span>Weights<strong>400 · 500 · 600</strong></span>
+          <span>Use For<strong>Paragraphs, Kickers, Buttons, All UI</strong></span>
+        </div>
+        <div class="specimen-body-xl">Large body (18px). For lead paragraphs and standfirst copy.</div>
+        <div class="specimen-body">Default body (14px). This is where most of the reading happens. Line-height 1.65, max-width ~620px, color at 95% white so it lifts off the charcoal without being stark.</div>
+        <div class="specimen-body-sm">Small body (13px). Secondary paragraph text, card descriptions, helper text.</div>
+        <div class="rule-block">
+          <div class="rule"><strong>Default size:</strong> 14px for body. The dashboard runs at 14px and the system reads tighter and more considered than a standard 16px baseline.</div>
+          <div class="rule"><strong>Default color:</strong> rgba(255,255,255,0.95). Only drop to 0.75 or lower for explicitly secondary copy.</div>
+          <div class="rule"><strong>Weights in use:</strong> 400 body, 500 UI/labels, 600 emphasis &amp; buttons.</div>
+        </div>
+      </div>
+
+      <!-- Mono · JetBrains Mono -->
+      <div class="type-card">
+        <div class="type-meta">
+          <span>Role<strong>Label &amp; Numeric</strong></span>
+          <span>Family<strong>JetBrains Mono</strong></span>
+          <span>Weights<strong>400 · 500 · 600</strong></span>
+          <span>Use For<strong>Labels, Breadcrumbs, Hex Values, KPIs, Counters</strong></span>
+        </div>
+        <div class="specimen-mono-label">SECTION · 03 · TYPE SYSTEM</div>
+        <div style="height: 12px;"></div>
+        <div class="specimen-mono">loss_aversion_multiplier = 2.25x</div>
+        <div class="specimen-mono">revenue_ttm · $1,284,502 · +18.4% yoy</div>
+        <div class="specimen-mono">00 / 25 · Submissions</div>
+        <div class="rule-block">
+          <div class="rule"><strong>Letter-spacing:</strong> 0.18em–0.28em on uppercase labels. Tight default on code and numbers.</div>
+          <div class="rule"><strong>Case:</strong> UPPERCASE for labels and section markers. Sentence-case for code and inline data.</div>
+          <div class="rule"><strong>Tabular nums:</strong> always on for numeric columns, counters, and KPI displays.</div>
+        </div>
+      </div>
+
+      <!-- Page Header Pattern -->
+      <div class="type-card">
+        <div class="type-meta">
+          <span>Role<strong>Page Header Pattern</strong></span>
+          <span>Structure<strong>Kicker + Title + Lead</strong></span>
+          <span>Source<strong>Dashboard · Internal Audit</strong></span>
+        </div>
+        <div class="pattern-demo">
+          <div class="pattern-kicker">The weekly ritual.</div>
+          <div class="pattern-title">Internal Audit.</div>
+          <div class="pattern-lead">A precise self-assessment across five domains: body, time, money, word, relationships.</div>
+        </div>
+        <div class="rule-block">
+          <div class="rule"><strong>Kicker:</strong> Inter 14px · weight 400 · sentence-case · ends with period · 12px margin below.</div>
+          <div class="rule"><strong>Title:</strong> Fraunces 42px · weight 400 · letter-spacing -0.025em · cream · ends with period.</div>
+          <div class="rule"><strong>Lead:</strong> Inter 14px · weight 400 · line-height 1.65 · 95% white · max-width ~440px.</div>
+          <div class="rule"><strong>Why it works:</strong> the kicker frames, the serif title lands, the lead grounds. The period on both kicker and title is the editorial signature — confident, declarative, done.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Shape & Motion -->
+  <section>
+    <div class="section-head">
+      <div class="section-title">Form.</div>
+      <div class="section-index">04 · System Rules</div>
+    </div>
+    <p class="section-lead">Consistent radii, layered shadows, uniform 150ms transitions. Every interactive surface uses the same motion curve so the system feels one piece.</p>
+
+    <div class="palette-group">
+      <div class="palette-group-label">Radius Scale</div>
+      <div class="token-grid">
+        <div class="token">
+          <div class="token-name">sm</div>
+          <div class="token-value">4px</div>
+          <div class="radius-demo" style="border-radius: 4px;"></div>
+        </div>
+        <div class="token">
+          <div class="token-name">md</div>
+          <div class="token-value">6px</div>
+          <div class="radius-demo" style="border-radius: 6px;"></div>
+        </div>
+        <div class="token">
+          <div class="token-name">lg</div>
+          <div class="token-value">8px</div>
+          <div class="radius-demo" style="border-radius: 8px;"></div>
+        </div>
+        <div class="token">
+          <div class="token-name">xl — default</div>
+          <div class="token-value">12px</div>
+          <div class="radius-demo" style="border-radius: 12px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <div class="palette-group-label">Shadow</div>
+      <div class="token-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="token" style="padding: 32px;">
+          <div class="token-name">Card · Default</div>
+          <div class="token-value" style="font-size: 11px; line-height: 1.6;">0 4px 20px -4px rgba(0,0,0,0.50),<br>0 1px 4px -1px rgba(0,0,0,0.30)</div>
+          <div class="shadow-demo" style="box-shadow: 0 4px 20px -4px rgba(0,0,0,0.50), 0 1px 4px -1px rgba(0,0,0,0.30);"></div>
+        </div>
+        <div class="token" style="padding: 32px;">
+          <div class="token-name">Card · Interactive Hover</div>
+          <div class="token-value" style="font-size: 11px; line-height: 1.6;">0 8px 32px -6px rgba(0,0,0,0.60),<br>0 2px 6px -2px rgba(0,0,0,0.35)</div>
+          <div class="shadow-demo" style="box-shadow: 0 8px 32px -6px rgba(0,0,0,0.60), 0 2px 6px -2px rgba(0,0,0,0.35);"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group" style="margin-bottom: 0;">
+      <div class="palette-group-label">Motion</div>
+      <div class="callout" style="margin: 0;">
+        <div class="callout-label">Global Transition</div>
+        <div class="callout-body"><code>150ms ease</code> on <code>background-color</code>, <code>border-color</code>, <code>box-shadow</code>, and <code>color</code>. No bounces, no long eases. Interactions feel sharp and fast.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Components -->
+  <section>
+    <div class="section-head">
+      <div class="section-title">Surfaces.</div>
+      <div class="section-index">05 · Style References</div>
+    </div>
+    <p class="section-lead">Stylistic references — not a component library. These demonstrate how surfaces, buttons, and label chips express the system. Structural patterns (sidebar, breadcrumb, tabs) live in the dashboard codebase.</p>
+
+    <div class="component-block">
+      <span class="component-label">Card · Primary Surface</span>
+      <div class="demo-card">
+        <div class="kpi">LESSON · 01 · IDENTITY</div>
+        <h4>Before you can build anything worth building.</h4>
+        <p>Background #2A2A2A, 1px border #3A3A3A, radius 12px, layered shadow. Hover lifts the surface, strengthens the border, and escalates the shadow.</p>
+      </div>
+    </div>
+
+    <div class="component-block">
+      <span class="component-label">Buttons · Primary / Ghost / Text</span>
+      <div class="btn-row">
+        <a href="#" class="btn">Enter Lesson</a>
+        <a href="#" class="btn btn-ghost">Open in Dashboard</a>
+        <a href="#" class="btn btn-text">Cancel</a>
+      </div>
+    </div>
+
+    <div class="component-block">
+      <span class="component-label">Label Chips · Tags &amp; Status</span>
+      <div class="tag-row">
+        <span class="tag-chip">Module 01</span>
+        <span class="tag-chip accent">In Progress</span>
+        <span class="tag-chip cream">Core Doctrine</span>
+        <span class="tag-chip">18 min read</span>
+        <span class="tag-chip accent">New</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Voice -->
+  <section>
+    <div class="section-head">
+      <div class="section-title">Voice.</div>
+      <div class="section-index">06 · Tone</div>
+    </div>
+    <p class="section-lead">Three principles that hold whether the copy is a button label, a lesson title, or a sales page.</p>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-num">01</div>
+        <div class="voice-title">Lethal Calm.</div>
+        <div class="voice-body">Short sentences. No hype. Authority comes from precision, not volume. The tone of a serious operator describing something he's done a thousand times.</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-num">02</div>
+        <div class="voice-title">Structural, not decorative.</div>
+        <div class="voice-body">Copy names the mechanism. If something is true, say why. If something is a claim, back it with a number, a story, or a rule. No adjectives doing the work a noun should be doing.</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-num">03</div>
+        <div class="voice-title">Masculine, not aggressive.</div>
+        <div class="voice-body">Direct, weighted, considered. The register of a man speaking to other men who are already serious. We don't sell by flexing — we speak like the work is already done.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Do / Don't -->
+  <section>
+    <div class="section-head">
+      <div class="section-title">Do / Don't.</div>
+      <div class="section-index">07 · Guardrails</div>
+    </div>
+
+    <div class="dodont-grid">
+      <div class="dodont do">
+        <div class="dodont-head">Do</div>
+        <ul>
+          <li>Use Fraunces weight 400 with a terminal period for page and section titles.</li>
+          <li>Write kickers in sentence-case Inter with a period — they frame the title below.</li>
+          <li>Default body color to rgba(255,255,255,0.95). Only drop muted for explicitly secondary copy.</li>
+          <li>Use JetBrains Mono uppercase for labels, breadcrumbs, KPI counters.</li>
+          <li>Layer elevation with the defined surface tokens, not ad-hoc greys.</li>
+          <li>Maroon for signal — CTAs, active states, section markers.</li>
+          <li>Cream divider (#ECE5CB · 1px) for signature separators like under a masthead.</li>
+          <li>150ms ease transitions — everywhere.</li>
+        </ul>
+      </div>
+      <div class="dodont dont">
+        <div class="dodont-head">Don't</div>
+        <ul>
+          <li>Use italic Fraunces mid-paragraph for editorial flourish.</li>
+          <li>Mix in Newsreader, Playfair, or any other serif.</li>
+          <li>Introduce bright reds (#E53E3E etc.) — the accent is maroon, not fire-engine red.</li>
+          <li>Use pure black #000000 for the base — the system is charcoal #1F1F1F.</li>
+          <li>Apply grunge textures, noise overlays, or cyberpunk glow effects.</li>
+          <li>Use flicker, pulse, glitch, or dash-flow animations — they belong to another brand.</li>
+          <li>Recolor, outline, stretch, or drop-shadow the logomark.</li>
+          <li>Let buttons or cards have inconsistent radii across a single page.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div>SVRN Design System · v0.2</div>
+    <div>Sovereign Operators · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>
