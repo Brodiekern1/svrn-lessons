@@ -487,6 +487,36 @@
     z-index: 0;
   }
 
+  /* Mobile: the 4-col absolute grid collapses unreadably below ~700px —
+     cards get too narrow for the Fraunces title, text overflows the card.
+     Reflow to a single vertical stack; the lesson numbers still convey order,
+     so arrows can drop. Kills the aspect-ratio breakout, too. */
+  @media (max-width: 768px) {
+    .svrn-flow-diagram {
+      position: static;
+      transform: none;
+      left: auto;
+      width: 100%;
+      aspect-ratio: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 24px 0;
+    }
+    .svrn-flow-node {
+      position: static;
+      width: 100%;
+      height: auto;
+      left: auto;
+      top: auto;
+      padding: 16px 18px;
+      gap: 8px;
+    }
+    .svrn-flow-node[data-pos] { left: auto; top: auto; }
+    .svrn-flow-node-title { font-size: 18px; }
+    .svrn-flow-arrows { display: none; }
+  }
+
   /* ─────────── Unmapped fallback ─────────── */
   .svrn-unmapped {
     padding: 12px;
@@ -524,6 +554,14 @@
   .svrn-hero.svrn-section-active,
   .svrn-section.svrn-section-active:not(:has(.svrn-element)) {
     transform: scale(1.05);
+  }
+  /* Touch devices: no cursor-Y input, and scroll-driven scaling reads jittery
+     at fast mobile scroll speeds. Kill the transform there entirely. */
+  @media (hover: none), (pointer: coarse) {
+    .svrn-hero.svrn-section-active,
+    .svrn-section.svrn-section-active:not(:has(.svrn-element)) {
+      transform: none;
+    }
   }
 </style>
 </head>
@@ -614,7 +652,11 @@
     heroEls.forEach(el => el.classList.add('in-view'));
   });
 
-  // Page-wide section activation: cursor Y position (or scroll) picks the active section
+  // Page-wide section activation: cursor Y position (or scroll) picks the active section.
+  // On touch-only devices there's no cursor and scroll-driven activation feels jittery —
+  // skip listener binding entirely.
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
   let currentActive = null;
   let pendingFrame = null;
   let lastY = -1;
