@@ -28,15 +28,6 @@
     --accent: #671F1F;
     --accent-bright: #943838;
     --accent-hover: #7A2828;
-    --accent-deep: #541818;
-
-    /* Gradient accent — primary buttons, active-state bars, hero badges.
-       Pairs with --accent-border cream outline + --accent-glow bleed. */
-    --accent-gradient: linear-gradient(180deg, #7A2828 0%, #541818 100%);
-    --accent-gradient-horizontal: linear-gradient(90deg, #7A2828 0%, #943838 50%, #7A2828 100%);
-    --accent-border: rgba(236, 229, 203, 0.20);
-    --accent-glow: 0 0 12px rgba(148, 56, 56, 0.35);
-    --accent-glow-soft: 0 0 6px rgba(148, 56, 56, 0.30);
 
     --shadow-card: 0 4px 20px -4px rgba(0, 0, 0, 0.50), 0 1px 4px -1px rgba(0, 0, 0, 0.30);
     --shadow-hover: 0 8px 32px -6px rgba(0, 0, 0, 0.60), 0 2px 6px -2px rgba(0, 0, 0, 0.35);
@@ -575,9 +566,9 @@
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: var(--accent-gradient);
+    background: var(--accent);
     color: var(--fg);
-    border: 1px solid var(--accent-border);
+    border: 1px solid var(--accent-bright);
     border-radius: var(--radius-lg);
     font-family: 'Inter', sans-serif;
     font-size: 13px;
@@ -585,13 +576,12 @@
     letter-spacing: 0.01em;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: var(--accent-glow-soft);
-    transition: background var(--ease), border-color var(--ease), box-shadow var(--ease);
+    transition: background-color var(--ease), border-color var(--ease), box-shadow var(--ease);
   }
 
   .btn:hover {
-    background: linear-gradient(180deg, #8B2F2F 0%, #5F1F1F 100%);
-    box-shadow: var(--accent-glow), 0 4px 16px -4px rgba(148, 56, 56, 0.40);
+    background: var(--accent-hover);
+    box-shadow: 0 4px 16px -4px rgba(148, 56, 56, 0.40);
   }
 
   .btn-ghost {
@@ -1020,33 +1010,6 @@
             <div class="swatch-note">Button hover state. Between base maroon and bright.</div>
           </div>
         </div>
-        <div class="swatch">
-          <div class="swatch-fill" style="background: #541818;"></div>
-          <div class="swatch-body">
-            <div class="swatch-name">Maroon Deep</div>
-            <div class="swatch-hex">#541818 · --accent-deep</div>
-            <div class="swatch-note">Gradient bottom. Pairs with Hover on top for the primary button fill.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="color-grid" style="margin-top: 12px;">
-        <div class="swatch">
-          <div class="swatch-fill" style="background: linear-gradient(180deg, #7A2828 0%, #541818 100%); border: 1px solid rgba(236, 229, 203, 0.20); box-shadow: 0 0 12px rgba(148, 56, 56, 0.35);"></div>
-          <div class="swatch-body">
-            <div class="swatch-name">Gradient Accent</div>
-            <div class="swatch-hex">--accent-gradient + --accent-border + --accent-glow</div>
-            <div class="swatch-note">The full primary treatment. 180deg gradient #7A2828 → #541818, 1px cream border at 20% opacity, soft maroon bleed. Use on primary CTAs, active-state bars, hero badges. Do not flatten to a single hex.</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-fill" style="background: linear-gradient(90deg, #7A2828 0%, #943838 60%, #A84444 100%); box-shadow: 0 0 6px rgba(148, 56, 56, 0.45);"></div>
-          <div class="swatch-body">
-            <div class="swatch-name">Horizontal Fill</div>
-            <div class="swatch-hex">--accent-gradient-horizontal</div>
-            <div class="swatch-note">Progress bars, completion fills, linear trackers. Cooler-to-warmer left-to-right reads as motion even when static.</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1283,8 +1246,6 @@
           <li>Use JetBrains Mono uppercase for labels, breadcrumbs, KPI counters.</li>
           <li>Layer elevation with the defined surface tokens, not ad-hoc greys.</li>
           <li>Maroon for signal — CTAs, active states, section markers.</li>
-          <li>Use the gradient accent treatment (180deg #7A2828 → #541818, 1px cream border @ 20%, soft maroon bleed) on every primary button and active-state bar. Flat maroon fills are for text, tiny pips, and ephemeral hover states only.</li>
-          <li>Add a soft maroon glow (rgba(148, 56, 56, 0.55)) behind small active indicators — nav dots, breadcrumb dots, toggle switches — so they read as lit, not painted.</li>
           <li>Cream divider (#ECE5CB · 1px) for signature separators like under a masthead.</li>
           <li>150ms ease transitions — everywhere.</li>
         </ul>
@@ -1293,7 +1254,6 @@
         <div class="dodont-head">Don't</div>
         <ul>
           <li>Left-align hero titles, section heads, or narrative leads — centered is the canonical spine.</li>
-          <li>Fill primary buttons or active bars with a flat single-hex maroon. The treatment is the vertical gradient + cream border + glow — not a painted rectangle.</li>
           <li>Build section heads as flex space-between (title left / index right) — that's the old off-axis pattern.</li>
           <li>Use italic Fraunces mid-paragraph for editorial flourish.</li>
           <li>Mix in Newsreader, Playfair, or any other serif.</li>
