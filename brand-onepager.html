@@ -95,6 +95,7 @@
     padding: 56px 0 80px;
     margin-bottom: 64px;
     border-bottom: 1px solid var(--border);
+    text-align: center;
   }
 
   .hero-kicker {
@@ -110,7 +111,7 @@
     max-width: 720px;
     height: auto;
     display: block;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
   }
 
   .hero-lead {
@@ -120,15 +121,14 @@
     line-height: 1.65;
     color: var(--fg-white);
     max-width: 540px;
+    margin: 0 auto;
   }
 
   /* ——— Sections ——— */
   section { margin-bottom: 96px; }
 
   .section-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    text-align: center;
     margin-bottom: 28px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--border);
@@ -150,6 +150,7 @@
     letter-spacing: 0.18em;
     color: var(--fg-faint);
     text-transform: uppercase;
+    margin-bottom: 14px;
   }
 
   .section-lead {
@@ -159,7 +160,8 @@
     line-height: 1.65;
     color: var(--fg-white);
     max-width: 640px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
+    text-align: center;
   }
 
   /* ——— Wordmark showcase ——— */
@@ -223,7 +225,7 @@
     letter-spacing: 0.02em;
     color: var(--fg-faint);
     margin-bottom: 12px;
-    padding-left: 2px;
+    text-align: center;
   }
 
   .asset-note strong { color: var(--fg-white); font-weight: 500; }
@@ -238,7 +240,7 @@
     text-transform: uppercase;
     color: var(--fg-faint);
     margin-bottom: 16px;
-    padding-left: 2px;
+    text-align: center;
   }
 
   .color-grid {
@@ -416,6 +418,7 @@
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: 48px;
+    text-align: center;
   }
 
   .pattern-kicker {
@@ -443,6 +446,7 @@
     line-height: 1.65;
     color: var(--fg-white);
     max-width: 440px;
+    margin: 0 auto;
   }
 
   /* ——— Tokens ——— */
@@ -509,6 +513,7 @@
     color: var(--fg-faint);
     margin-bottom: 24px;
     display: block;
+    text-align: center;
   }
 
   .demo-card {
@@ -519,6 +524,7 @@
     box-shadow: var(--shadow-card);
     transition: background-color var(--ease), border-color var(--ease), box-shadow var(--ease);
     max-width: 480px;
+    margin: 0 auto;
   }
 
   .demo-card:hover {
@@ -553,7 +559,7 @@
   }
 
   /* Buttons */
-  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
   .btn {
     display: inline-flex;
@@ -604,7 +610,7 @@
   }
 
   /* Label chips */
-  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 
   .tag-chip {
     display: inline-flex;
@@ -798,7 +804,7 @@
   <!-- Masthead -->
   <div class="masthead">
     <img src="logomark-cream.svg" alt="SVRN" class="masthead-logo">
-    <div class="tag">Brand One-Pager · v0.2 · 2026-04-17</div>
+    <div class="tag">Brand One-Pager · v0.3 · 2026-04-23</div>
   </div>
   <div class="cream-divider"></div>
 
@@ -812,8 +818,8 @@
   <!-- 01 Wordmark -->
   <section>
     <div class="section-head">
-      <div class="section-title">Wordmark.</div>
       <div class="section-index">01 · Identity</div>
+      <div class="section-title">Wordmark.</div>
     </div>
     <p class="section-lead">Two marks from the original designer, both in cream. The logomark is the primary — horizontal wordmark for mastheads, hero blocks, and signature placements. The symbol stands alone as a favicon, badge, or collapsed-nav glyph.</p>
 
@@ -864,8 +870,8 @@
   <!-- 02 Color -->
   <section>
     <div class="section-head">
-      <div class="section-title">Color.</div>
       <div class="section-index">02 · Palette</div>
+      <div class="section-title">Color.</div>
     </div>
     <p class="section-lead">Dark charcoal base with layered elevation, cream foreground for warmth, maroon for signal. Greys are built from white at graded opacity — they stay tonally consistent across surfaces without needing named shades.</p>
 
@@ -1011,8 +1017,8 @@
   <!-- 03 Typography -->
   <section>
     <div class="section-head">
-      <div class="section-title">Typography.</div>
       <div class="section-index">03 · Type System</div>
+      <div class="section-title">Typography.</div>
     </div>
     <p class="section-lead">Three families, three jobs. Fraunces for display. Inter for everything people actually read. JetBrains Mono for labels, coordinates, and numbers. No italic serif in body copy — that's a crutch we don't use.</p>
 
@@ -1086,10 +1092,11 @@
           <div class="pattern-lead">A precise self-assessment across five domains: body, time, money, word, relationships.</div>
         </div>
         <div class="rule-block">
-          <div class="rule"><strong>Kicker:</strong> Inter 14px · weight 400 · sentence-case · ends with period · 12px margin below.</div>
-          <div class="rule"><strong>Title:</strong> Fraunces 42px · weight 400 · letter-spacing -0.025em · cream · ends with period.</div>
-          <div class="rule"><strong>Lead:</strong> Inter 14px · weight 400 · line-height 1.65 · 95% white · max-width ~440px.</div>
-          <div class="rule"><strong>Why it works:</strong> the kicker frames, the serif title lands, the lead grounds. The period on both kicker and title is the editorial signature — confident, declarative, done.</div>
+          <div class="rule"><strong>Alignment:</strong> all three elements center-aligned on the page, stacked vertically on the canonical axis. This is the spine every narrative surface inherits — lessons, primers, funnels, docs.</div>
+          <div class="rule"><strong>Kicker:</strong> Inter 14px · weight 400 · sentence-case · ends with period · centered · 12px margin below.</div>
+          <div class="rule"><strong>Title:</strong> Fraunces 42px · weight 400 · letter-spacing -0.025em · cream · ends with period · centered.</div>
+          <div class="rule"><strong>Lead:</strong> Inter 14px · weight 400 · line-height 1.65 · 95% white · max-width ~440px · margin: 0 auto · centered.</div>
+          <div class="rule"><strong>Why it works:</strong> the centered spine forces discipline — every element earns its place on the axis. The kicker frames, the serif title lands, the lead grounds. The period on both kicker and title is the editorial signature — confident, declarative, done.</div>
         </div>
       </div>
     </div>
@@ -1098,8 +1105,8 @@
   <!-- 04 Shape & Motion -->
   <section>
     <div class="section-head">
-      <div class="section-title">Form.</div>
       <div class="section-index">04 · System Rules</div>
+      <div class="section-title">Form.</div>
     </div>
     <p class="section-lead">Consistent radii, layered shadows, uniform 150ms transitions. Every interactive surface uses the same motion curve so the system feels one piece.</p>
 
@@ -1157,8 +1164,8 @@
   <!-- 05 Components -->
   <section>
     <div class="section-head">
-      <div class="section-title">Surfaces.</div>
       <div class="section-index">05 · Style References</div>
+      <div class="section-title">Surfaces.</div>
     </div>
     <p class="section-lead">Stylistic references — not a component library. These demonstrate how surfaces, buttons, and label chips express the system. Structural patterns (sidebar, breadcrumb, tabs) live in the dashboard codebase.</p>
 
@@ -1195,8 +1202,8 @@
   <!-- 06 Voice -->
   <section>
     <div class="section-head">
-      <div class="section-title">Voice.</div>
       <div class="section-index">06 · Tone</div>
+      <div class="section-title">Voice.</div>
     </div>
     <p class="section-lead">Three principles that hold whether the copy is a button label, a lesson title, or a sales page.</p>
 
@@ -1222,14 +1229,17 @@
   <!-- 07 Do / Don't -->
   <section>
     <div class="section-head">
-      <div class="section-title">Do / Don't.</div>
       <div class="section-index">07 · Guardrails</div>
+      <div class="section-title">Do / Don't.</div>
     </div>
 
     <div class="dodont-grid">
       <div class="dodont do">
         <div class="dodont-head">Do</div>
         <ul>
+          <li>Center-align the narrative spine — hero, section heads, kickers, titles, leads — on every surface.</li>
+          <li>Keep card internals left-aligned — cards are contained objects with a local axis of their own.</li>
+          <li>Stack section heads as mono index above Fraunces title, both centered, with a bottom rule.</li>
           <li>Use Fraunces weight 400 with a terminal period for page and section titles.</li>
           <li>Write kickers in sentence-case Inter with a period — they frame the title below.</li>
           <li>Default body color to rgba(255,255,255,0.95). Only drop muted for explicitly secondary copy.</li>
@@ -1243,6 +1253,8 @@
       <div class="dodont dont">
         <div class="dodont-head">Don't</div>
         <ul>
+          <li>Left-align hero titles, section heads, or narrative leads — centered is the canonical spine.</li>
+          <li>Build section heads as flex space-between (title left / index right) — that's the old off-axis pattern.</li>
           <li>Use italic Fraunces mid-paragraph for editorial flourish.</li>
           <li>Mix in Newsreader, Playfair, or any other serif.</li>
           <li>Introduce bright reds (#E53E3E etc.) — the accent is maroon, not fire-engine red.</li>
@@ -1258,7 +1270,7 @@
 
   <!-- Footer -->
   <div class="footer">
-    <div>SVRN Design System · v0.2</div>
+    <div>SVRN Design System · v0.3</div>
     <div>Sovereign Operators · 2026</div>
   </div>
 
