@@ -29,8 +29,11 @@
     --fg-quiet: rgba(255, 255, 255, 0.25);
 
     --accent: #671F1F;
-    --accent-bright: #D85050;
+    --accent-bright: #943838;            /* brick — text/labels/dashes/borders */
     --accent-hover: #7A2828;
+    --accent-deep: #541818;              /* gradient bottom stop */
+    --accent-status: #7A2828;            /* standalone status/notification dots */
+    --accent-gradient: linear-gradient(180deg, #7A2828 0%, #541818 100%); /* button + active rail */
 
     --shadow-card: 0 4px 20px -4px rgba(0, 0, 0, 0.50), 0 1px 4px -1px rgba(0, 0, 0, 0.30);
     --shadow-hover: 0 8px 32px -6px rgba(0, 0, 0, 0.60), 0 2px 6px -2px rgba(0, 0, 0, 0.35);
@@ -569,7 +572,7 @@
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: var(--accent);
+    background: var(--accent-gradient);
     color: var(--fg);
     border: 1px solid var(--accent-bright);
     border-radius: var(--radius-lg);
@@ -579,11 +582,11 @@
     letter-spacing: 0.01em;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color var(--ease), border-color var(--ease), box-shadow var(--ease);
+    transition: background var(--ease), border-color var(--ease), box-shadow var(--ease);
   }
 
   .btn:hover {
-    background: var(--accent-hover);
+    background: linear-gradient(180deg, #8C3030 0%, #642020 100%);
     box-shadow: 0 4px 16px -4px rgba(148, 56, 56, 0.40);
   }
 
@@ -630,9 +633,9 @@
   }
 
   .tag-chip.accent {
-    background: rgba(216, 80, 80, 0.12);
+    background: rgba(148, 56, 56, 0.12);
     color: var(--accent-bright);
-    border-color: rgba(216, 80, 80, 0.30);
+    border-color: rgba(148, 56, 56, 0.30);
   }
 
   .tag-chip.cream {
@@ -998,10 +1001,10 @@
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-fill" style="background: #D85050;"></div>
+          <div class="swatch-fill" style="background: #943838;"></div>
           <div class="swatch-body">
-            <div class="swatch-name">Maroon Bright</div>
-            <div class="swatch-hex">#D85050 · --accent-bright</div>
+            <div class="swatch-name">Maroon Bright (brick)</div>
+            <div class="swatch-hex">#943838 · --accent-bright</div>
             <div class="swatch-note">Hover highlight, labels, active indicators, section markers.</div>
           </div>
         </div>
