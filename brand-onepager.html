@@ -843,7 +843,7 @@
   <section>
     <div class="section-head">
       <div class="section-index">01 · Identity</div>
-      <div class="section-title">Wordmark.</div>
+      <div class="section-title">Wordmark</div>
     </div>
     <p class="section-lead">Two marks from the original designer, both in cream. The logomark is the primary — horizontal wordmark for mastheads, hero blocks, and signature placements. The symbol stands alone as a favicon, badge, or collapsed-nav glyph.</p>
 
@@ -895,7 +895,7 @@
   <section>
     <div class="section-head">
       <div class="section-index">02 · Palette</div>
-      <div class="section-title">Color.</div>
+      <div class="section-title">Color</div>
     </div>
     <p class="section-lead">Dark charcoal base with layered elevation, cream foreground for warmth, maroon for signal. Greys are built from white at graded opacity — they stay tonally consistent across surfaces without needing named shades.</p>
 
@@ -1042,7 +1042,7 @@
   <section>
     <div class="section-head">
       <div class="section-index">03 · Type System</div>
-      <div class="section-title">Typography.</div>
+      <div class="section-title">Typography</div>
     </div>
     <p class="section-lead">Three families, three jobs. Archivo Expanded Black caps for display, the Monument system. Inter for everything people actually read. JetBrains Mono for labels, coordinates, and numbers. The display face never renders italic.</p>
 
@@ -1062,7 +1062,7 @@
           <div class="rule"><strong>Tracking:</strong> 0.01em default; tighten to 0.005em at 48px and above.</div>
           <div class="rule"><strong>Line-height:</strong> 1.06-1.12 at hero and title scale. Caps carry no descenders, so no extra room.</div>
           <div class="rule"><strong>Size compensation:</strong> caps Expanded Black renders visually larger than the retired serif at equal px. Converting a legacy display size: 60px and up scales by 0.72, 30-59px by 0.78, 20-29px by 0.82, under 20px by 0.9. Body and mono sizes never scale.</div>
-          <div class="rule"><strong>Terminal period:</strong> page and section titles end with a period, a stylistic signature borrowed from the dashboard ("Internal Audit.").</div>
+          <div class="rule"><strong>No terminal period:</strong> page and section titles never end with a period (rule locked 2026-07-27; the old dashboard-era period signature is retired). Kickers and lede sentences keep normal punctuation.</div>
           <div class="rule"><strong>Never italic:</strong> the display face never renders italic. No font-style: italic, no em tags on display type, no italic axis loaded from Google Fonts. The old serif's hard rule carries over in full.</div>
         </div>
       </div>
@@ -1113,8 +1113,8 @@
           <span>Source<strong>Dashboard · Internal Audit</strong></span>
         </div>
         <div class="pattern-demo">
-          <div class="pattern-kicker">The weekly ritual.</div>
-          <div class="pattern-title">Internal Audit.</div>
+          <div class="pattern-kicker">The weekly ritual</div>
+          <div class="pattern-title">Internal Audit</div>
           <div class="pattern-lead">A precise self-assessment across five domains: body, time, money, word, relationships.</div>
         </div>
         <div class="rule-block">
@@ -1132,7 +1132,7 @@
   <section>
     <div class="section-head">
       <div class="section-index">04 · System Rules</div>
-      <div class="section-title">Form.</div>
+      <div class="section-title">Form</div>
     </div>
     <p class="section-lead">Consistent radii, layered shadows, uniform 150ms transitions. Every interactive surface uses the same motion curve so the system feels one piece.</p>
 
@@ -1191,7 +1191,7 @@
   <section>
     <div class="section-head">
       <div class="section-index">05 · Style References</div>
-      <div class="section-title">Surfaces.</div>
+      <div class="section-title">Surfaces</div>
     </div>
     <p class="section-lead">Stylistic references — not a component library. These demonstrate how surfaces, buttons, and label chips express the system. Structural patterns (sidebar, breadcrumb, tabs) live in the dashboard codebase.</p>
 
@@ -1229,14 +1229,14 @@
   <section>
     <div class="section-head">
       <div class="section-index">06 · Tone</div>
-      <div class="section-title">Voice.</div>
+      <div class="section-title">Voice</div>
     </div>
     <p class="section-lead">Three principles that hold whether the copy is a button label, a lesson title, or a sales page.</p>
 
     <div class="voice-grid">
       <div class="voice-card">
         <div class="voice-num">01</div>
-        <div class="voice-title">Lethal Calm.</div>
+        <div class="voice-title">Lethal Calm</div>
         <div class="voice-body">Short sentences. No hype. Authority comes from precision, not volume. The tone of a serious operator describing something he's done a thousand times.</div>
       </div>
       <div class="voice-card">
@@ -1266,7 +1266,7 @@
           <li>Center-align the narrative spine — hero, section heads, kickers, titles, leads — on every surface.</li>
           <li>Keep card internals left-aligned — cards are contained objects with a local axis of their own.</li>
           <li>Stack section heads as mono index above the Archivo caps title, both centered, with a bottom rule.</li>
-          <li>Set display type in Archivo Expanded Black caps (weight 800 · wdth 125) with a terminal period for page and section titles.</li>
+          <li>Set display type in Archivo Expanded Black caps (weight 800 · wdth 125); titles never take a terminal period.</li>
           <li>Write kickers in sentence-case Inter with a period — they frame the title below.</li>
           <li>Default body color to rgba(255,255,255,0.95). Only drop muted for explicitly secondary copy.</li>
           <li>Use JetBrains Mono uppercase for labels, breadcrumbs, KPI counters.</li>
