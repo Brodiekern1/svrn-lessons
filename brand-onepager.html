@@ -9,7 +9,7 @@
 <title>SVRN — Brand One-Pager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #1F1F1F;
@@ -141,11 +141,14 @@
   }
 
   .section-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(36px, 4vw, 44px);
-    letter-spacing: -0.025em;
-    line-height: 1.05;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: clamp(28px, 3.1vw, 34px);
+    letter-spacing: 0.01em;
+    line-height: 1.08;
     color: var(--fg);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
@@ -330,21 +333,27 @@
   .type-meta span strong { color: var(--fg); font-weight: 600; display: block; margin-top: 4px; font-size: 11px; }
 
   .specimen-display {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(48px, 7vw, 80px);
-    line-height: 1.04;
-    letter-spacing: -0.035em;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: clamp(35px, 5.0vw, 58px);
+    line-height: 1.08;
+    letter-spacing: 0.005em;
     color: var(--fg);
     margin-bottom: 24px;
   }
 
   .specimen-display-sub {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 32px;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: 25px;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.01em;
     color: var(--fg);
     margin-bottom: 8px;
   }
@@ -436,11 +445,14 @@
   }
 
   .pattern-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 42px;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: 33px;
     line-height: 1.1;
-    letter-spacing: -0.025em;
+    letter-spacing: 0.01em;
     color: var(--fg);
     margin-bottom: 16px;
   }
@@ -540,10 +552,13 @@
   }
 
   .demo-card h4 {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: -0.01em;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 0.01em;
     color: var(--fg);
     margin-bottom: 8px;
   }
@@ -671,10 +686,13 @@
   }
 
   .voice-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: -0.015em;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 0.01em;
     color: var(--fg);
     margin-bottom: 12px;
   }
@@ -810,7 +828,7 @@
   <!-- Masthead -->
   <div class="masthead">
     <img src="logomark-cream.svg" alt="SVRN" class="masthead-logo">
-    <div class="tag">Brand One-Pager · v0.3 · 2026-04-23</div>
+    <div class="tag">Brand One-Pager · v0.4 · 2026-07-26</div>
   </div>
   <div class="cream-divider"></div>
 
@@ -1026,24 +1044,26 @@
       <div class="section-index">03 · Type System</div>
       <div class="section-title">Typography.</div>
     </div>
-    <p class="section-lead">Three families, three jobs. Fraunces for display. Inter for everything people actually read. JetBrains Mono for labels, coordinates, and numbers. No italic serif in body copy — that's a crutch we don't use.</p>
+    <p class="section-lead">Three families, three jobs. Archivo Expanded Black caps for display, the Monument system. Inter for everything people actually read. JetBrains Mono for labels, coordinates, and numbers. The display face never renders italic.</p>
 
     <div class="type-stack">
-      <!-- Display · Fraunces -->
+      <!-- Display · Archivo Expanded ("Monument") -->
       <div class="type-card">
         <div class="type-meta">
-          <span>Role<strong>Display</strong></span>
-          <span>Family<strong>Fraunces</strong></span>
-          <span>Weights<strong>400 · 500</strong></span>
+          <span>Role<strong>Display · "Monument"</strong></span>
+          <span>Family<strong>Archivo Expanded</strong></span>
+          <span>Weight<strong>800 · wdth 125</strong></span>
           <span>Use For<strong>Page Titles, Section Titles, Hero</strong></span>
         </div>
         <div class="specimen-display">Rebuild the man holding the blueprints.</div>
-        <div class="specimen-display-sub">Section scale — 32px · weight 400 · tight tracking.</div>
+        <div class="specimen-display-sub">Section scale · 25px · weight 800 · caps.</div>
         <div class="rule-block">
-          <div class="rule"><strong>Weight:</strong> 400 is the default. Drop to 300 only for oversized display copy.</div>
-          <div class="rule"><strong>Tracking:</strong> -0.025em at section scale, -0.035em at hero scale.</div>
-          <div class="rule"><strong>Terminal period:</strong> page and section titles end with a period — a stylistic signature borrowed from the dashboard ("Internal Audit.").</div>
-          <div class="rule"><strong>Never:</strong> italic Fraunces inline for editorial emphasis. That's a Jack/Newsreader pattern — not ours.</div>
+          <div class="rule"><strong>Setting:</strong> Archivo (variable), rendered Expanded Black in ALL CAPS. Weight 800, font-variation-settings 'wdth' 125 (font-stretch 125% may ride along as a harmless duplicate). Stack: 'Archivo', 'Inter', system-ui, sans-serif.</div>
+          <div class="rule"><strong>Tracking:</strong> 0.01em default; tighten to 0.005em at 48px and above.</div>
+          <div class="rule"><strong>Line-height:</strong> 1.06-1.12 at hero and title scale. Caps carry no descenders, so no extra room.</div>
+          <div class="rule"><strong>Size compensation:</strong> caps Expanded Black renders visually larger than the retired serif at equal px. Converting a legacy display size: 60px and up scales by 0.72, 30-59px by 0.78, 20-29px by 0.82, under 20px by 0.9. Body and mono sizes never scale.</div>
+          <div class="rule"><strong>Terminal period:</strong> page and section titles end with a period, a stylistic signature borrowed from the dashboard ("Internal Audit.").</div>
+          <div class="rule"><strong>Never italic:</strong> the display face never renders italic. No font-style: italic, no em tags on display type, no italic axis loaded from Google Fonts. The old serif's hard rule carries over in full.</div>
         </div>
       </div>
 
@@ -1100,9 +1120,9 @@
         <div class="rule-block">
           <div class="rule"><strong>Alignment:</strong> all three elements center-aligned on the page, stacked vertically on the canonical axis. This is the spine every narrative surface inherits — lessons, primers, funnels, docs.</div>
           <div class="rule"><strong>Kicker:</strong> Inter 14px · weight 400 · sentence-case · ends with period · centered · 12px margin below.</div>
-          <div class="rule"><strong>Title:</strong> Fraunces 42px · weight 400 · letter-spacing -0.025em · cream · ends with period · centered.</div>
+          <div class="rule"><strong>Title:</strong> Archivo Expanded 33px · weight 800 · wdth 125 · caps · letter-spacing 0.01em · cream · ends with period · centered.</div>
           <div class="rule"><strong>Lead:</strong> Inter 14px · weight 400 · line-height 1.65 · 95% white · max-width ~440px · margin: 0 auto · centered.</div>
-          <div class="rule"><strong>Why it works:</strong> the centered spine forces discipline — every element earns its place on the axis. The kicker frames, the serif title lands, the lead grounds. The period on both kicker and title is the editorial signature — confident, declarative, done.</div>
+          <div class="rule"><strong>Why it works:</strong> the centered spine forces discipline; every element earns its place on the axis. The kicker frames, the caps title lands, the lead grounds. The period on both kicker and title is the editorial signature: confident, declarative, done.</div>
         </div>
       </div>
     </div>
@@ -1245,8 +1265,8 @@
         <ul>
           <li>Center-align the narrative spine — hero, section heads, kickers, titles, leads — on every surface.</li>
           <li>Keep card internals left-aligned — cards are contained objects with a local axis of their own.</li>
-          <li>Stack section heads as mono index above Fraunces title, both centered, with a bottom rule.</li>
-          <li>Use Fraunces weight 400 with a terminal period for page and section titles.</li>
+          <li>Stack section heads as mono index above the Archivo caps title, both centered, with a bottom rule.</li>
+          <li>Set display type in Archivo Expanded Black caps (weight 800 · wdth 125) with a terminal period for page and section titles.</li>
           <li>Write kickers in sentence-case Inter with a period — they frame the title below.</li>
           <li>Default body color to rgba(255,255,255,0.95). Only drop muted for explicitly secondary copy.</li>
           <li>Use JetBrains Mono uppercase for labels, breadcrumbs, KPI counters.</li>
@@ -1261,8 +1281,8 @@
         <ul>
           <li>Left-align hero titles, section heads, or narrative leads — centered is the canonical spine.</li>
           <li>Build section heads as flex space-between (title left / index right) — that's the old off-axis pattern.</li>
-          <li>Use italic Fraunces mid-paragraph for editorial flourish.</li>
-          <li>Mix in Newsreader, Playfair, or any other serif.</li>
+          <li>Italicize the display face. Never, anywhere. The italic axis is not even loaded.</li>
+          <li>Mix in Newsreader, Playfair, or any serif display face. The display layer is Archivo only.</li>
           <li>Introduce bright reds (#E53E3E etc.) — the accent is maroon, not fire-engine red.</li>
           <li>Use pure black #000000 for the base — the system is charcoal #1F1F1F.</li>
           <li>Apply grunge textures, noise overlays, or cyberpunk glow effects.</li>
@@ -1276,7 +1296,7 @@
 
   <!-- Footer -->
   <div class="footer">
-    <div>SVRN Design System · v0.3</div>
+    <div>SVRN Design System · v0.4</div>
     <div>Sovereign Operators · 2026</div>
   </div>
 

@@ -6,7 +6,7 @@
 <title>Module Overview: Execution Architecture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --svrn-bg: #1F1F1F;
@@ -84,11 +84,14 @@
     text-transform: uppercase;
   }
   .svrn-hero-title {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(52px, 7vw, 80px);
-    line-height: 0.95;
-    letter-spacing: -0.035em;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: clamp(37px, 5.0vw, 58px);
+    line-height: 1.06;
+    letter-spacing: 0.005em;
     color: var(--svrn-fg);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     margin-bottom: 28px;
@@ -101,12 +104,15 @@
     margin: 0 auto;
   }
   .svrn-hero-quote {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
     font-style: normal;
-    font-size: clamp(16px, 1.6vw, 19px);
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: clamp(14px, 1.4vw, 17px);
     line-height: 1.45;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
     color: var(--svrn-fg-muted);
     max-width: 560px;
     margin: 0 auto;
@@ -117,11 +123,14 @@
 
   /* ─────────── Display headings ─────────── */
   .svrn-h1 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(36px, 4vw, 44px);
-    line-height: 1.05;
-    letter-spacing: -0.025em;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: clamp(28px, 3.1vw, 34px);
+    line-height: 1.08;
+    letter-spacing: 0.01em;
     color: var(--svrn-fg);
     margin-top: 64px;
     margin-bottom: 20px;
@@ -129,11 +138,14 @@
   .svrn-h1:first-child { margin-top: 0; }
 
   .svrn-h2 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(28px, 3vw, 32px);
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: clamp(22px, 2.3vw, 25px);
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.01em;
     color: var(--svrn-fg);
     margin-top: 56px;
     margin-bottom: 16px;
@@ -141,25 +153,32 @@
 
   .svrn-display-shadow { text-shadow: var(--svrn-display-shadow); }
 
-  /* All headings share Fraunces display treatment — only size varies.
+  /* All headings share the Archivo Expanded display treatment ("Monument"
+     system: caps, weight 800, wdth 125, never italic); only size varies.
      Per Brodie 2026-04-17: "all headers regardless of H1,H2,H3,H4 styled
      like the main ones. Size should be the only thing that changes." */
   .svrn-h3 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(22px, 2.4vw, 26px);
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: clamp(18px, 2.0vw, 21px);
     line-height: 1.15;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.01em;
     color: var(--svrn-fg);
     margin-top: 44px;
     margin-bottom: 14px;
   }
   .svrn-h4 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(18px, 1.9vw, 21px);
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
+    font-size: clamp(15px, 1.6vw, 17px);
     line-height: 1.2;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.01em;
     color: var(--svrn-fg);
     margin-top: 36px;
     margin-bottom: 12px;
@@ -472,11 +491,14 @@
     color: var(--svrn-fg-faint);
   }
   .svrn-flow-node-title {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 17px;
-    font-weight: 300;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
     line-height: 1.2;
-    letter-spacing: -0.005em;
+    letter-spacing: 0.01em;
     color: var(--svrn-fg);
     text-shadow: var(--svrn-display-shadow);
   }
@@ -511,14 +533,14 @@
   }
 
   /* Mobile: the 4-col absolute grid collapses unreadably below ~700px —
-     cards get too narrow for the Fraunces title, text overflows the card.
+     cards get too narrow for the Archivo caps title, text overflows the card.
      Reflow to a single vertical stack; the lesson numbers still convey order,
      so arrows can drop. Kills the aspect-ratio breakout, too. */
   @media (max-width: 768px) {
     .svrn-hero-title {
-      font-size: clamp(28px, 7.6vw, 36px);
-      letter-spacing: -0.03em;
-      line-height: 1.05;
+      font-size: clamp(22px, 5.9vw, 28px);
+      letter-spacing: 0.01em;
+      line-height: 1.08;
     }
     .svrn-flow-diagram {
       position: static;
@@ -541,7 +563,7 @@
       gap: 8px;
     }
     .svrn-flow-node[data-pos] { left: auto; top: auto; }
-    .svrn-flow-node-title { font-size: 18px; }
+    .svrn-flow-node-title { font-size: 16px; }
     .svrn-flow-arrows { display: none; }
   }
 
@@ -588,12 +610,15 @@
     margin-bottom: 12px;
   }
   .svrn-element-placeholder-hint {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 18px;
-    font-weight: 300;
+    font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
     font-style: normal;
+    font-variation-settings: 'wdth' 125;
+    font-stretch: 125%;
+    text-transform: uppercase;
     color: var(--svrn-fg-muted);
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
   }
 
   /* ─────────── Animation layer ─────────── */
